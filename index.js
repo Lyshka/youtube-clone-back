@@ -10,6 +10,7 @@ import cors from "cors"
 
 const app = express()
 dotenv.config()
+app.use(cors())
 
 const connect = () => {
 	mongoose
@@ -21,7 +22,6 @@ const connect = () => {
 			console.log(err)
 		})
 }
-app.use(cors())
 app.use(cookieParser())
 app.use(express.json())
 
